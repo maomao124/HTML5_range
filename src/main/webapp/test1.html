@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<!--
+Project name(项目名称)：HTML5_range
+  File name(文件名): test1
+  Authors(作者）: mao
+  Author QQ：1296193245
+  GitHub：https://github.com/maomao124/
+  Date(创建日期)： 2022/4/1
+  Time(创建时间)： 22:36
+  Description(描述)： 无
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="animate.css">
+    <style>
+        body {
+            background-color: #ffbdf2;
+        }
+
+        form {
+            width: 350px;
+            margin: 20px;
+            text-align: center;
+            font-size: 24px;
+            transition: all 2s linear 0s;
+        }
+
+        form:hover {
+            transition: all 2s linear 0s;
+            /*color: red;*/
+            background-color: #6bf5ff;
+        }
+
+        div.p {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+<div class="p">
+    <div class="animated bounceInLeft">
+        <form method="post" action="result.jsp">
+            <fieldset>
+                <legend>
+                    音量
+                </legend>
+                <label>音量大小：
+                    <input type="range" name="range" id="range" min="0" max="100" step="1" value="0"
+                           onchange="change()"/>
+                </label>
+                <span id="volume">0</span>
+                <br>
+                <br>
+                <input style="font-size: 24px;" type="submit" name="提交">
+            </fieldset>
+
+        </form>
+    </div>
+</div>
+
+<script>
+    //当用户拖动滑动条时触发onchange事件调用此函数
+    function change()
+    {
+        //获取滑动条对象
+        var range = document.getElementById("range");
+        //获取span对象
+        var text = document.getElementById("volume");
+        text.innerHTML = range.value;
+    }
+</script>
+</body>
+</html>
