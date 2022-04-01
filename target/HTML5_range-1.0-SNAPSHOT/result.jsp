@@ -19,6 +19,7 @@
             font-size: 36px;
             transition: all 4s linear 0s;
         }
+
         body:hover {
             background-color: #54f8ff;
             font-size: 36px;
